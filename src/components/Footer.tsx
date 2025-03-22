@@ -2,6 +2,19 @@ import { Rocket, Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      // Account for fixed header height
+      const headerHeight = 64; // Height of the header (h-16 = 4rem = ~64px)
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - headerHeight,
+        behavior: "smooth"
+      });
+    }
+  };
+
   return (
     <footer className="bg-slate-900 text-gray-300 pt-12 pb-8">
       <div className="container mx-auto px-4">
@@ -19,10 +32,38 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">Навигация</h3>
             <ul className="space-y-2">
-              <li><a href="/" className="hover:text-white transition-colors">Главная</a></li>
-              <li><a href="/#history" className="hover:text-white transition-colors">История</a></li>
-              <li><a href="/#missions" className="hover:text-white transition-colors">Миссии</a></li>
-              <li><a href="/#cosmonauts" className="hover:text-white transition-colors">Космонавты</a></li>
+              <li>
+                <button 
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  Главная
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection("history")}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  История
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection("missions")}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  Миссии
+                </button>
+              </li>
+              <li>
+                <button 
+                  onClick={() => scrollToSection("cosmonauts")}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  Космонавты
+                </button>
+              </li>
             </ul>
           </div>
           

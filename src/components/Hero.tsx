@@ -5,7 +5,13 @@ const Hero = () => {
   const scrollToContent = () => {
     const element = document.getElementById("history");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // Add offset for fixed header
+      const headerHeight = 64; // Approximately 16*4=64px for the header height
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - headerHeight,
+        behavior: "smooth"
+      });
     }
   };
 
@@ -38,7 +44,7 @@ const Hero = () => {
       </div>
       
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce cursor-pointer">
         <ChevronDown className="h-10 w-10 text-white" onClick={scrollToContent} />
       </div>
     </div>
