@@ -20,7 +20,6 @@ export default defineConfig({
   },
   allowedHosts: [
       'localhost',
-      '*.arnld.ai',  // Allow all subdomains of arnld.ai
-      'preview--vostok.arnld.ai'  // Explicitly allow this domain
+      '*',  // Allow all subdomains of arnld.ai
   ],
 });
