@@ -18,8 +18,8 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
   },
-  allowedHosts: [
+    allowedHosts: [
       'localhost',
-      '*',  // Allow all subdomains of arnld.ai
-  ],
+      '*.arnld.ai',  // Allow all subdomains of arnld.ai
+    ],
 });
