@@ -18,4 +18,9 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5173,
   },
+  allowedHosts: [
+      'localhost',
+      '*.arnld.ai',  // Allow all subdomains of arnld.ai
+      'preview--vostok.arnld.ai'  // Explicitly allow this domain
+  ],
 });
