@@ -35,8 +35,8 @@ const Hero = () => {
           Советская космическая программа, положившая начало эпохе пилотируемых космических полётов и открывшая человечеству путь к звёздам
         </p>
         <Button 
-          size="lg" 
-          className="bg-yellow-500 hover:bg-yellow-600 text-black font-medium px-8 py-6 text-xl rounded-lg"
+          variant="yellow"
+          size="xl"
           onClick={scrollToContent}
         >
           Узнать больше
