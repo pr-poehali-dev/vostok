@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const scrollToContent = () => {
@@ -31,16 +30,9 @@ const Hero = () => {
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
           Программа <span className="text-red-500">«Восток»</span>
         </h1>
-        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-10">
+        <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
           Советская космическая программа, положившая начало эпохе пилотируемых космических полётов и открывшая человечеству путь к звёздам
         </p>
-        <Button 
-          size="lg" 
-          className="bg-red-500 hover:bg-red-600 text-white px-8 py-6 text-xl rounded-lg"
-          onClick={scrollToContent}
-        >
-          Узнать больше
-        </Button>
       </div>
       
       {/* Scroll indicator */}
