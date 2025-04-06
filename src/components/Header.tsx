@@ -1,5 +1,4 @@
 import { Rocket } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,10 +12,6 @@ const Header = () => {
         behavior: "smooth"
       });
     }
-  };
-
-  const scrollToMoreInfo = () => {
-    scrollToSection("history");
   };
 
   return (
@@ -57,14 +52,6 @@ const Header = () => {
               Космонавты
             </button>
           </nav>
-          
-          <Button 
-            variant="outline" 
-            className="text-white border-red-500 hover:bg-red-500/20"
-            onClick={scrollToMoreInfo}
-          >
-            Узнать больше
-          </Button>
         </div>
       </div>
     </header>
